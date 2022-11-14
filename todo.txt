@@ -1,0 +1,10 @@
+TODO List
+
+define scope:
+- web page builder
+- web page seller
+- crypto coin researcher
+- crypto exchange researcher
+- personal html, css, javascript reference and repo
+- personal blog site
+
