@@ -5,8 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KZTD on Github</title>
+    <!-- FONTS  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <!-- STYLES  -->
+    <link rel="stylesheet" href="style/colors.css" />
   </head>
   <style>
+    @import url(style/colors.css);
     /* reset */
     *,
     *::before,
@@ -21,29 +35,61 @@
       color: inherit;
       background: inherit;
     }
+    /* font */
+    body {
+      font-family: "Roboto", sans-serif;
+    }
     /* vars */
     :root {
       --color-topnav: #bbb;
       --color-topnav-background: #eee;
     }
     /* topnav */
-    .topnav,
+    .topnav-style {
+      color: var(--color-primary-text);
+      background: var(--color-primary);
+    }
+    .topnav {
+      height: 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .topnav .logo {
+      font-weight: 700;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      padding-left: 0.75rem;
+    }
     .topnav ul {
       display: flex;
-      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
     }
-    .topnav ul,
-    .topnav li {
+    .topnav a {
       padding-inline: 2rem;
+      padding-block: 0.5rem;
     }
-    .topnav-style {
-      color: var(--color-topnav);
-      background: var(--color-topnav-background);
+    .topnav a:hover {
+      color: white;
+      background: var(--color-primary-lighter);
+    }
+    .topnav .hamburger {
+      /* display: block; */
+      position: absolute;
+      right: 2rem;
+    }
+    @media only screen and (max-width: 600px) {
+      body {
+        background-color: lightblue;
+      }
     }
   </style>
   <body>
     <nav class="topnav topnav-style">
       <div class="logo">kztd</div>
+      <div class="hamburger"><i class="fa-solid fa-bars"></i></div>
       <ul>
         <li><a href="#" class="topnav-link">Styles</a></li>
         <li><a href="#" class="topnav-link">Exchanges</a></li>
