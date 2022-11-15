@@ -6,8 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>KZTD on Github</title>
   </head>
+  <style>
+    /* reset */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      text-decoration: none;
+      list-style-type: none;
+    }
+    a {
+      color: inherit;
+      background: inherit;
+    }
+    /* vars */
+    :root {
+      --color-topnav: #bbb;
+      --color-topnav-background: #eee;
+    }
+    /* topnav */
+    .topnav,
+    .topnav ul {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .topnav ul,
+    .topnav li {
+      padding-inline: 2rem;
+    }
+    .topnav-style {
+      color: var(--color-topnav);
+      background: var(--color-topnav-background);
+    }
+  </style>
   <body>
-    <nav class="topnav">
+    <nav class="topnav topnav-style">
       <div class="logo">kztd</div>
       <ul>
         <li><a href="#" class="topnav-link">Styles</a></li>
