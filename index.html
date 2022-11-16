@@ -20,7 +20,146 @@
     <link rel="stylesheet" href="style/colors.css" />
   </head>
   <style>
-    @import url(style/colors.css);
+    /* @import url(style/colors.css); */
+    /* https://www.w3schools.com/colors/colors_hsl.asp */
+    :root {
+      /* Hue: 0=red, 120=green, 240=blue
+           Saturation: 0%=grey, 100% full color
+           Lightness: 0%=black, 100%=white
+          */
+      --primary-h: 248;
+      --primary-s: 30%;
+      --primary-l: 37%;
+      --primary-hsl: var(--primary-h), var(--primary-s), var(--primary-l);
+      --color-primary: hsl(var(--primary-hsl));
+      --color-primary-light: hsl(
+        var(--primary-h),
+        var(--primary-s),
+        calc(var(--primary-l) * 1.5)
+      );
+      --color-primary-lighter: hsl(
+        var(--primary-h),
+        var(--primary-s),
+        calc(var(--primary-l) * 1.8)
+      );
+      /* --color-primary-lighter: hsla(var(--primary-hsl), 0.3);
+      --color-primary-lighter: hsla(var(--primary-hsl), 0.3); */
+      --color-primary-dark: hsl(
+        var(--primary-h),
+        var(--primary-s),
+        calc(var(--primary-l) * 2 / 3)
+      );
+      --color-primary-darker: hsl(
+        var(--primary-h),
+        var(--primary-s),
+        calc(var(--primary-l) * 1 / 3)
+      );
+      --color-primary-text: white;
+      --second-h: calc(var(--primary-h) + 90);
+      --second-hsl: var(--second-h), var(--primary-s), var(--primary-l);
+      --color-second: hsl(var(--second-hsl));
+      --color-second-light: hsla(var(--second-hsl), 0.7);
+      --color-second-lighter: hsla(var(--second-hsl), 0.3);
+      --color-second-dark: hsl(
+        var(--second-h),
+        var(--primary-s),
+        calc(var(--primary-l) * 2 / 3)
+      );
+      --color-second-darker: hsl(
+        var(--second-h),
+        var(--primary-s),
+        calc(var(--primary-l) * 1 / 3)
+      );
+      --third-h: calc(var(--primary-h) - 90);
+      --third-hsl: var(--third-h), var(--primary-s), var(--primary-l);
+      --color-third: hsl(var(--third-hsl));
+      --color-third-light: hsla(var(--third-hsl), 0.7);
+      --color-third-lighter: hsla(var(--third-hsl), 0.3);
+      --color-third-dark: hsl(
+        var(--third-h),
+        var(--primary-s),
+        calc(var(--primary-l) * 2 / 3)
+      );
+      --color-third-darker: hsl(
+        var(--third-h),
+        var(--primary-s),
+        calc(var(--primary-l) * 1 / 3)
+      );
+    }
+    .primary,
+    .c1 {
+      color: white;
+      background: var(--color-primary);
+    }
+    .primary-light,
+    .c1-light {
+      color: black;
+      background: var(--color-primary-light);
+    }
+    .primary-lighter,
+    .c1-lighter {
+      color: black;
+      background: var(--color-primary-lighter);
+    }
+    .primary-dark,
+    .c1-dark {
+      color: white;
+      background: var(--color-primary-dark);
+    }
+    .primary-darker,
+    .c1-darker {
+      color: white;
+      background: var(--color-primary-darker);
+    }
+    .second,
+    .c2 {
+      background: var(--color-second);
+    }
+    .second-light,
+    .c2-light {
+      color: black;
+      background: var(--color-second-light);
+    }
+    .second-lighter,
+    .c2-lighter {
+      color: black;
+      background: var(--color-second-lighter);
+    }
+    .second-dark,
+    .c2-dark {
+      color: white;
+      background: var(--color-second-dark);
+    }
+    .second-darker,
+    .c2-darker {
+      color: white;
+      background: var(--color-second-darker);
+    }
+    .third,
+    .c3 {
+      background: var(--color-third);
+    }
+    .third-light,
+    .c3-light {
+      color: black;
+      background: var(--color-third-light);
+    }
+    .third-lighter,
+    .c3-lighter {
+      color: black;
+      background: var(--color-third-lighter);
+    }
+    .third-dark,
+    .c3-dark {
+      color: white;
+      background: var(--color-third-dark);
+    }
+    .third-darker,
+    .c3-darker {
+      color: white;
+      background: var(--color-third-darker);
+    }
+
     /* reset */
     *,
     *::before,
@@ -47,7 +186,7 @@
     /* topnav */
     .topnav-style {
       color: var(--color-primary-text);
-      background: var(--color-primary);
+      background: var(--color-primary-dark);
     }
     .topnav {
       height: 2.5rem;
@@ -71,9 +210,10 @@
       padding-inline: 2rem;
       padding-block: 0.5rem;
     }
-    .topnav a:hover {
+    .topnav li:hover {
       color: white;
       background: var(--color-primary-lighter);
+      z-index: 1;
     }
     .topnav .hamburger {
       /* display: block; */
@@ -84,6 +224,12 @@
       body {
         background-color: lightblue;
       }
+    }
+    .c1-test-light {
+      background: var(--color-primary-light);
+    }
+    .c1-test-lighter {
+      background: var(--color-primary-lighter);
     }
   </style>
   <body>
@@ -97,5 +243,10 @@
       </ul>
     </nav>
     <h1>KZTD on Github</h1>
+    <div class="c1">1</div>
+    <div class="c1-light">2</div>
+    <div class="c1-lighter">3</div>
+    <div class="c1-test-light">3</div>
+    <div class="c1-test-lighter">3</div>
   </body>
 </html>
